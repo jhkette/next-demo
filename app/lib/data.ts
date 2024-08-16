@@ -119,6 +119,8 @@ export async function fetchFilteredInvoices(
   }
 }
 
+
+
 export async function fetchInvoicesPages(query: string) {
   try {
     const count = await sql`SELECT COUNT(*)
@@ -170,7 +172,9 @@ export async function fetchCustomers() {
     const data = await sql<CustomerField>`
       SELECT
         id,
-        name
+        name,
+        email,
+        image_url
       FROM customers
       ORDER BY name ASC
     `;
